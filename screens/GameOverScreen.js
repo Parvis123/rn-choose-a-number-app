@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, Button, Image } from "react-native";
-import Bodytext from "../components/BodyText";
-import Colors from "../constants/colors";
 
+import Bodytext from "../components/BodyText";
+import MainButton from "../components/MainButton";
+
+import Colors from "../constants/colors";
 import defaultStyles from "../constants/default-styles";
 
 const GameOverScreen = (props) => {
@@ -14,6 +16,7 @@ const GameOverScreen = (props) => {
           source={require("../assets/images/success.png")}
           style={styles.image}
           resizeMode="cover"
+          fadeDuration={500}
         />
       </View>
       <View style={styles.resultsContainer}>
@@ -24,7 +27,7 @@ const GameOverScreen = (props) => {
           <Text style={styles.highlight}>{props.userNumber}</Text>
         </Bodytext>
       </View>
-      <Button title="NEW GAME" onPress={props.onRestart} />
+      <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
     </View>
   );
 };
